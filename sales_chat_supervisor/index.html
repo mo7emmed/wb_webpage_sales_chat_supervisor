@@ -116,7 +116,10 @@
         s.parentNode.insertBefore(t,s)}(window, document,'script',
         'https://connect.facebook.net/en_US/fbevents.js');
         fbq('init', '24392129497037495');
-        fbq('track', 'PageView');
+        fbq('track', 'PageView', {
+            page_name: document.title,   // parameters here are arbitrary. we can use for example: page_category: 'visits for sales chat supervisor'
+            page_url: window.location.pathname    // or page_content: 'application'    
+        });
     </script>
     <noscript><img height="1" width="1" style="display:none"
     src="https://www.facebook.com/tr?id=24392129497037495&ev=PageView&noscript=1"
@@ -235,7 +238,10 @@
     <!-- Start Meta Tracker Code -->
     <script>
         document.getElementById('email-track').addEventListener('click', function() {
-        fbq('trackCustom', 'ChatSupervisorJobEmailClick'); // Custom event name
+        fbq('track', 'SubmitApplication', {
+            job_title: "sales chat supervisor",
+            track_type: "email link click"
+        }); // Standard event name
   });
     </script>
     <!-- End Meta tracker Code -->
