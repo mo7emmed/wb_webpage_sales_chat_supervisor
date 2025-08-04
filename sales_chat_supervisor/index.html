@@ -105,6 +105,23 @@
             color: var(--dark-cyan);
         }
     </style>
+            <!-- Meta Pixel Code -->
+    <script>
+        !function(f,b,e,v,n,t,s)
+        {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+        n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+        if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+        n.queue=[];t=b.createElement(e);t.async=!0;
+        t.src=v;s=b.getElementsByTagName(e)[0];
+        s.parentNode.insertBefore(t,s)}(window, document,'script',
+        'https://connect.facebook.net/en_US/fbevents.js');
+        fbq('init', '24392129497037495');
+        fbq('track', 'PageView');
+    </script>
+    <noscript><img height="1" width="1" style="display:none"
+    src="https://www.facebook.com/tr?id=24392129497037495&ev=PageView&noscript=1"
+    /></noscript>
+    <!-- End Meta Pixel Code -->
 </head>
 <body>
     <div class="container">
@@ -191,7 +208,7 @@
         </div>
         <div class="section apply">
             <h2>How to Apply</h2>
-            <p>Send the following info to <a href="mailto:jobs@whitebedding.net">jobs@whitebedding.net</a>:</p>
+            <p>Send the following info to: <a href="mailto:jobs@whitebedding.net" id = "email-track">jobs@whitebedding.net</a>:</p>
             <ol>
                 <li>Full name</li>
                 <li>Phone number (with WhatsApp account)</li>
@@ -215,6 +232,13 @@
             <span style="font-size:0.8em;">&copy; 2025 WhiteBedding. All rights reserved.</span><br>
         </div>
     </div>
+    <!-- Start Meta Tracker Code -->
+    <script>
+        document.getElementById('email-track').addEventListener('click', function() {
+        fbq('trackCustom', 'EmailClickTestActive'); // Custom event name
+  });
+    </script>
+    <!-- End Meta tracker Code -->
 </body>
 </html>
 
