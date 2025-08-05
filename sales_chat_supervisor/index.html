@@ -209,7 +209,10 @@
                 <li>The freedom to build systems, coach a team, and make things better.</li>
             </ul>
         </div>
-        <div class="section apply">
+
+        <button id="show-apply-btn" style="display:block;margin:24px auto 0 auto;padding:10px 24px;font-size:1.1em;background:var(--dark-cyan);color:#fff;border:none;border-radius:6px;cursor:pointer;">Show How to Apply</button>
+        <div class="section apply" id="apply-section" style="display:none;">
+            
             <h2>How to Apply</h2>
             <p>Send the following info to: <a href="mailto:jobs@whitebedding.net" id = "email-track">jobs@whitebedding.net</a>:</p>
             <ol>
@@ -242,7 +245,15 @@
             job_title: "sales chat supervisor",
             track_type: "email link click"
         }); // Standard event name
-  });
+
+            document.getElementById('show-apply-btn').addEventListener('click', function() {
+            document.getElementById('apply-section').style.display = 'block';
+            this.style.display = 'none';
+            fbq('trackCustom', 'SalesChatSupervisorJobLead', {
+            job_title: "sales chat supervisor",
+            track_type: "How-To-Apply button click"
+        });
+
     </script>
     <!-- End Meta tracker Code -->
 </body>
