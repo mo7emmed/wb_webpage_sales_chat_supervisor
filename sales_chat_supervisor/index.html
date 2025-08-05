@@ -238,26 +238,30 @@
             <span style="font-size:0.8em;">&copy; 2025 WhiteBedding. All rights reserved.</span><br>
         </div>
     </div>
-    <!-- Start Meta Tracker Code -->
+
     <script>
         document.getElementById('email-track').addEventListener('click', function() {
-            fbq('track', 'SubmitApplication', {
-                job_title: "sales chat supervisor",
-                track_type: "email link click"
-            }); // Standard event name
+            if (typeof fbq === 'function') {
+                fbq('track', 'SubmitApplication', {
+                    job_title: "sales chat supervisor",
+                    track_type: "email link click"
+                }); // Standard event name - meta tracker code
+            }
         })
 
         document.getElementById('show-apply-btn').addEventListener('click', function() {
             document.getElementById('apply-section').style.display = 'block';
             this.style.display = 'none';
-            fbq('trackCustom', 'TestLead', {
-            job_title: "sales chat supervisor",
-            track_type: "How-To-Apply button click"
-            });
+            if (typeof fbq === 'function') {        // meta tracker code
+                fbq('trackCustom', 'TestLead', {
+                job_title: "sales chat supervisor",
+                track_type: "How-To-Apply button click"
+                });
+            }
         })
 
     </script>
-    <!-- End Meta tracker Code -->
+
 </body>
 </html>
 
